@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Configuration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="{{ url_for('static', filename='css/custom-bootstrap.css') }}" rel="stylesheet">
+    <!-- <link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"> -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <style>
+        .col-3-half {
+            flex: 0 0 auto;
+            width: 45% !important
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 28 entries -->
+    {% include 'nav.html' %}
+
+    <div class="container-fluid m-4">
+        <form action="/save-config" method="post">
+
+            <div class="row my-2">
+                <div class="col">
+                    <h1>Change Config</h1>
+                </div>
+                <div class="col my-2">
+                    <input type="Submit" value="Save Config Data">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3-half">
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>AllowOfflineTxForUnknownId</h4></label>
+                        <select name="AllowOfflineTxForUnknownId" id="AllowOfflineTxForUnknownId">
+                             <option value="" selected hidden>{{ AllowOfflineTxForUnknownId }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>AuthorizationCacheEnabled</h4></label>
+                        <select name="AuthorizationCacheEnabled" id="AuthorizationCacheEnabled">
+                             <option value="" selected hidden>{{ AuthorizationCacheEnabled }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>AuthorizeRemoteTxRequests</h4></label>
+                        <select name="AuthorizeRemoteTxRequests" id="AuthorizeRemoteTxRequests">
+                             <option value="" selected hidden>{{ AuthorizeRemoteTxRequests }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>BlinkRepeat</h4>
+                        <input type="text" name="BlinkRepeat" placeholder="{{ BlinkRepeat }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>ClockAlignedDataInterval</h4>
+                        <input type="text" name="ClockAlignedDataInterval" placeholder="{{ ClockAlignedDataInterval }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>ConnectionTimeOut</h4>
+                        <input type="text" name="ConnectionTimeOut" placeholder="{{ ConnectionTimeOut }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>HeartbeatInterval</h4>
+                        <input type="text" name="HeartbeatInterval" placeholder="{{ HeartbeatInterval }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>LightIntensity</h4>
+                        <input type="text" name="LightIntensity" placeholder="{{ LightIntensity }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>LocalAuthListEnabled</h4></label>
+                        <select name="LocalAuthListEnabled" id="LocalAuthListEnabled">
+                             <option value="" selected hidden>{{ LocalAuthListEnabled }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>LocalAuthorizeOffline</h4></label>
+                        <select name="LocalAuthorizeOffline" id="LocalAuthorizeOffline">
+                             <option value="" selected hidden>{{ LocalAuthorizeOffline }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>LocalPreAuthorize</h4></label>
+                        <select name="LocalPreAuthorize" id="LocalPreAuthorize">
+                             <option value="" selected hidden>{{ LocalPreAuthorize }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>MaxEnergyOnInvalidId</h4>
+                        <input type="text" name="MaxEnergyOnInvalidId" placeholder="{{ MaxEnergyOnInvalidId }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>MeterValuesAlignedData</h4>
+                        <input type="text" name="MeterValuesAlignedData" placeholder="{{ MeterValuesAlignedData }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>MeterValuesSampledData</h4>
+                        <input type="text" name="MeterValuesSampledData" placeholder="{{ MeterValuesSampledData }}">
+                    </div>
+
+                </div>
+                <div class="col-3-half">
+                    <div class="row my-4 mx-2">
+                        <h4>MeterValueSampleInterval</h4>
+                        <input type="text" name="MeterValueSampleInterval" placeholder="{{ MeterValueSampleInterval }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>MinimumStatusDuration</h4>
+                        <input type="text" name="MinimumStatusDuration" placeholder="{{ MinimumStatusDuration }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>ResetRetries</h4>
+                        <input type="text" name="ResetRetries" placeholder="{{ ResetRetries }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>ConnectorPhaseRotation</h4>
+                        <input type="text" name="ConnectorPhaseRotation" placeholder="{{ ConnectorPhaseRotation }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>StopTransactionOnEVSideDisconnect</h4></label>
+                        <select name="StopTransactionOnEVSideDisconnect" id="StopTransactionOnEVSideDisconnect">
+                             <option value="" selected hidden>{{ StopTransactionOnEVSideDisconnect }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>StopTransactionOnInvalidId</h4></label>
+                        <select name="StopTransactionOnInvalidId" id="StopTransactionOnInvalidId">
+                             <option value="" selected hidden>{{ StopTransactionOnInvalidId }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>StopTxnAlignedData</h4>
+                        <input type="text" name="StopTxnAlignedData" placeholder="{{ StopTxnAlignedData }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>StopTxnSampledData</h4>
+                        <input type="text" name="StopTxnSampledData" placeholder="{{ StopTxnSampledData }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>TransactionMessageAttempts</h4>
+                        <input type="text" name="TransactionMessageAttempts" placeholder="{{ TransactionMessageAttempts }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>TransactionMessageRetryInterval</h4>
+                        <input type="text" name="TransactionMessageRetryInterval" placeholder="{{ TransactionMessageRetryInterval }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <label for=""><h4>UnlockConnectorOnEVSideDisconnect</h4></label>
+                        <select name="UnlockConnectorOnEVSideDisconnect" id="UnlockConnectorOnEVSideDisconnect">
+                             <option value="" selected hidden>{{ UnlockConnectorOnEVSideDisconnect }}</option>
+                            <option value="True">True</option>
+                            <option value="False">False</option>
+                        </select>
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>WebSocketPingInterval</h4>
+                        <input type="text" name="WebSocketPingInterval" placeholder="{{ WebSocketPingInterval }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>Saved IdToken</h4>
+                        <input type="text" name="IdToken" placeholder="{{ IdToken }}">
+                    </div>
+                    <div class="row my-4 mx-2">
+                        <h4>Last Tag IdToken</h4>
+                        <input type="text" name="LastTagIdToken" placeholder="{{ LastTagIdToken }}">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+</body>

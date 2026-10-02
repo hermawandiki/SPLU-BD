@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Charge Point</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="{{ url_for('static', filename='css/custom-bootstrap.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <style type="text/css">
+        body {
+            background: gainsboro !important;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .scrollable {
+            position: absolute;
+            overflow-y: scroll;
+            height: 60%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+
+    <div class="container-fluid m-4">
+        <div class="row">
+            <div class="col-6">
+
+                <div class="row my-4">
+                    <div class="col">
+                        <h1>Charging Point Data</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="row my-4">
+                            <h4>URL Endpoint:</h4>
+                            <h5>{{ url_endpoint }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>ChargeBox ID:</h4>
+                            <h5>{{ cboxid }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Charge Box SN:</h4>
+                            <h5>{{ cboxnum }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Charge Point Model:</h4>
+                            <h5>{{ cpmodel }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Charge Point SN:</h4>
+                            <h5>{{ cpnum }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Charge Point Vendor:</h4>
+                            <h5>{{ cpvendor }}</h5>
+                        </div>
+
+                    </div>
+
+                    <div class="col">
+
+                        <div class="row my-4">
+                            <h4>Firmware version:</h4>
+                            <h5>{{ fw_version }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>ICCID:</h4>
+                            <h5>{{ iccid }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>IMSI:</h4>
+                            <h5>{{ imsi }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Meter SN:</h4>
+                            <h5>{{ meter_sn }}</h5>
+                        </div>
+
+                        <div class="row my-4">
+                            <h4>Meter type:</h4>
+                            <h5>{{ meter_type }}</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-5">
+                <form action="/save-cp-data" method="post">
+                    <div class="row my-4">
+                        <div class="col mx-3">
+                            <h1>Change CP Data</h1>
+                        </div>
+                        <div class="col my-2">
+                            <input type="Submit" value="Load / Save CP Data">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-5 scrollable">
+                            <div class="row my-4 mx-3">
+                                <h4>URL Endpoint:</h4>
+                                <input type="text" name="url_endpoint">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>ChargeBox ID:</h4>
+                                <input type="text" name="cboxid">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Charge Box SN:</h4>
+                                <input type="text" name="cboxnum">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Charge Point Model:</h4>
+                                <input type="text" name="cpmodel">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Charge Point SN:</h4>
+                                <input type="text" name="cpnum">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Charge Point Vendor:</h4>
+                                <input type="text" name="cpvendor">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Firmware Version:</h4>
+                                <input type="text" name="fw_version">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>ICCID:</h4>
+                                <input type="text" name="iccid">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>IMSI:</h4>
+                                <input type="text" name="imsi">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Meter SN:</h4>
+                                <input type="text" name="meter_sn">
+                            </div>
+
+                            <div class="row my-4 mx-3">
+                                <h4>Meter type:</h4>
+                                <input type="text" name="meter_type">
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

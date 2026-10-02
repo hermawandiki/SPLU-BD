@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Get Config</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+
+    <style type="text/css">
+        body {
+            background: gainsboro !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% include 'nav.html' %}
+
+    <div class="container-fluid m-4">
+        <div class="row my-2">
+            <h1>Get Config Data</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid m-4">
+        <div class="row">
+            <div class="col">
+                <div class="row my-4">
+                    <h4>Get Configuration Max Keys:</h4>
+                    <h5>{{ GetConfigurationMaxKeys }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Meter Values Aligned Data Max Length:</h4>
+                    <h5>{{ MeterValuesAlignedDataMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Meter Values Sampled Data Max Length:</h4>
+                    <h5>{{ MeterValuesSampledDataMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Number Of Connectors:</h4>
+                    <h5>{{ NumberOfConnectors }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Connector Phase Rotation Max Length:</h4>
+                    <h5>{{ ConnectorPhaseRotationMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Stop Txn Aligned Data Max Length:</h4>
+                    <h5>{{ StopTxnAlignedDataMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Stop Txn Sampled Data Max Length:</h4>
+                    <h5>{{ StopTxnSampledDataMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Supported FeatureP rofiles Max Length:</h4>
+                    <h5>{{ SupportedFeatureProfilesMaxLength }}</h5>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row my-4">
+                    <h4>Local Auth List Max Length:</h4>
+                    <h5>{{ LocalAuthListMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Send Local List Max Length:</h4>
+                    <h5>{{ SendLocalListMaxLength }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Reserve Connector Zero Supported:</h4>
+                    <h5>{{ ReserveConnectorZeroSupported }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Charge Profile Max Stack Level:</h4>
+                    <h5>{{ ChargeProfileMaxStackLevel }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Charging Schedule Allowed Charging Rate Unit:</h4>
+                    <h5>{{ ChargingScheduleAllowedChargingRateUnit }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Charging Schedule Max Periods:</h4>
+                    <h5>{{ ChargingScheduleMaxPeriods }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4>Connector Switch 3 to 1 Phase Supported:</h4>
+                    <h5>{{ ConnectorSwitch3to1PhaseSupported }}</h5>
+                </div>
+                <div class="row my-4">
+                    <h4> Max Charging Profiles Installed:</h4>
+                    <h5>{{ MaxChargingProfilesInstalled }}</h5>
+                </div>
+
+            </div>
+            <div class="col"></div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
